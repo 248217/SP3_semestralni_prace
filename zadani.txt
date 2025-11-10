@@ -1,0 +1,20 @@
+1.	A	nacteni dat + test shodnosti korelace u deti a dospelych
+2.	B	graficke zpracovani - vykresleni zavislosti delek, vykresleni casove osy
+2b	C	vykresleni pomeru v ruznych vekovych kategoriich boxplotem, identifikace odlehlych pozorovani
+3.	A	test mnohorozmerneho normalniho rozdeleni
+4.	B	odhady parametru normalniho rozdeleni +  itervaly spolehlivosti
+5.	C	sepsani asymptotickeho rozdeleni medianu X/Y
+6.	A	test shodnosti medianu pro deti (0-20) a dospele ( 20-) - uzitim vysledku z bodu 5
+7.	B	test shodnosti medianu pro deti a dospele - uzitim Kolmogorov-Smirnovova testu
+8.	C	test shdnosti medianu pro vekove kategorie - neparametricka ANOVA
+9.	A	kvantilova regrese - sepsani predpokladu a zakladnich myslenek moznosti testovani hypotez
+10. 	B	zpracovani kvantilova regrese - testy vyznamnosti doprovodnych promennych
+11. 	C	diskuze vlastnosti odhadu v kvantilove regresi s vekem a pohlavim jako kategorialnimi promennymi.
+
+B:
+2.	B	graficke zpracovani - vykresleni zavislosti delek, vykresleni casove osy
+4.	B	odhady parametru normalniho rozdeleni +  itervaly spolehlivosti
+7.	B	test shodnosti medianu pro deti a dospele - uzitim Kolmogorov-Smirnovova testu
+10. 	B	zpracovani kvantilova regrese - testy vyznamnosti doprovodnych promennych
+
+https://www.overleaf.com/project/690c6f023bfecc493b11caec
