@@ -1,7 +1,7 @@
 import os
 from read_data import read_data
 from graphic_analysis import graphic_analysis
-from parametric_analysis import vypocet_odhadu_normalnich_parametru
+from parametric_analysis import compute_normal_parameter_estimates
 
 
 
@@ -30,8 +30,11 @@ def main() -> None:
     # Rychlá kontrola – vypíše prvních pár řádků
     print(model.data.head())
 
-    # 2 a 2b. uloha
+    # Ulohy 2 .a 2b.: graficka analiza 
     graphic_analysis(model)
+
+    # Uloha 4.: Odhady parametrů normálního rozdělení + intervaly spolehlivosti
+    compute_normal_parameter_estimates(model)
     
     # Tady pak můžeš volat další analýzy, např. graphic_analysis.run(model)
 

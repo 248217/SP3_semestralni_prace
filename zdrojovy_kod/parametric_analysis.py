@@ -3,19 +3,7 @@ import numpy as np
 from scipy import stats
 
 
-def normal_parameter_estimates(data, column, confidence=0.95):
-    """
-    Funkce provede:
-    - odhad střední hodnoty, rozptylu a směrodatné odchylky
-    - výpočet intervalu spolehlivosti pro:
-        * střední hodnotu (t-rozdělení)
-        * rozptyl       (chi-kvadrát)
-        * směrodatnou odchylku (ze CI pro rozptyl)
-
-    data:  pandas DataFrame
-    column: název numerického sloupce
-    confidence: hladina spolehlivosti (např. 0.95 pro 95 %)
-    """
+def compute_column_normal_stats(data, column, confidence=0.95):
 
     # vytažení hodnot sloupce a převod na numpy pole
     x = data[column].dropna().astype(float).values
@@ -73,14 +61,7 @@ def normal_parameter_estimates(data, column, confidence=0.95):
     }
 
 
-def vypocet_odhadu_normalnich_parametru(model, confidence=0.95):
-    """
-    Hlavní funkce kompatibilní s main.py:
-    - očekává, že model.data je pandas DataFrame
-    - spočítá odhady parametrů pro vybrané sloupce
-    - vytiskne výsledky do konzole
-    - uloží výsledky do textového souboru ve složce 'vystupy/statistika'
-    """
+def compute_normal_parameter_estimates(model, confidence=0.95):
 
     df = model.data
     if df is None:
@@ -106,7 +87,7 @@ def vypocet_odhadu_normalnich_parametru(model, confidence=0.95):
 
     for col in analyzovane_sloupce:
         try:
-            res = normal_parameter_estimates(df, col, confidence=confidence)
+            res = compute_column_normal_stats(df, col, confidence=confidence)
         except ValueError as e:
             lines.append(f"\nSloupec: {col}")
             lines.append(f"  {e}")
