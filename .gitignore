@@ -1,3 +1,7 @@
 zadani.txt
 vstupni_data.txt
 .venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
