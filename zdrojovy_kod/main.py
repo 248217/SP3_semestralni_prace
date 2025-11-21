@@ -2,6 +2,7 @@ import os
 from read_data import read_data
 from graphic_analysis import graphic_analysis
 from parametric_analysis import compute_normal_parameter_estimates
+from ks_median_test import ks_median_test_children_vs_adults
 
 
 
@@ -31,10 +32,14 @@ def main() -> None:
     print(model.data.head())
 
     # Ulohy 2 .a 2b.: graficka analiza 
-    graphic_analysis(model)
+    #graphic_analysis(model)
 
     # Uloha 4.: Odhady parametrů normálního rozdělení + intervaly spolehlivosti
     compute_normal_parameter_estimates(model)
+
+    # Uloha 7.: test shodnosti medianu pro deti a dospele - uzitim Kolmogorov-Smirnovova testu				
+    ks_median_test_children_vs_adults(model, column="poměr")
+
     
     # Tady pak můžeš volat další analýzy, např. graphic_analysis.run(model)
 
