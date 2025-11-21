@@ -1,5 +1,7 @@
 import os
 from read_data import read_data
+from graphic_analysis import graphic_analysis
+
 
 
 class Model:
@@ -27,6 +29,7 @@ def main() -> None:
     # Rychlá kontrola – vypíše prvních pár řádků
     print(model.data.head())
 
+    graphic_analysis(model)
     # Tady pak můžeš volat další analýzy, např. graphic_analysis.run(model)
 
 
