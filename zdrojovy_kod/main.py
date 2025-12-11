@@ -4,6 +4,7 @@ from graphic_analysis import graphic_analysis
 from parametric_analysis import compute_normal_parameter_estimates
 from asymptotic_median_ratio import asymptotic_median_ratio
 from ks_median_test import ks_median_test_children_vs_adults
+from quantile_regression import quantile_analysis
 
 
 
@@ -36,14 +37,16 @@ def main() -> None:
     #graphic_analysis(model)
 
     # Uloha 4.: Odhady parametrů normálního rozdělení + intervaly spolehlivosti
-    # compute_normal_parameter_estimates(model)
+    compute_normal_parameter_estimates(model)
 
     # Uloha 7.: test shodnosti medianu pro deti a dospele - uzitim Kolmogorov-Smirnovova testu				
-    # ks_median_test_children_vs_adults(model, column="poměr")
+    ks_median_test_children_vs_adults(model, column="poměr")
 
     # Uloha 5: Asymptotické rozdělení mediánu poměru X/Y
     asymptotic_median_ratio(model, column_x="A", column_y="B")
 
+    # Uloha 10: kvantilova regrese
+    quantile_analysis(model, dependent="poměr", covariates=["pohlaví", "věk"])
     
     # Tady pak můžeš volat další analýzy, např. graphic_analysis.run(model)
 
