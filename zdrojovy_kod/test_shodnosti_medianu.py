@@ -36,12 +36,12 @@ def Wilcoxon(model, column="poměr", alpha=0.05):
     n_adults = len(adults_values)
     
     
-    print("\n===== 📊 MANNŮV–WHITNEYŮV U-TEST (DVOUVÝBĚROVÝ WILCOXON) =====")
+    print("\n===== MANNŮV–WHITNEYŮV U-TEST (DVOUVÝBĚROVÝ WILCOXON) =====")
     print(f"Skupina Děti (0-20): N={n_children}, Medián={np.median(children_values):.4f}")
     print(f"Skupina Dospělí (20+): N={n_adults}, Medián={np.median(adults_values):.4f}")
     
     if n_children < 5 or n_adults < 5:
-        print("!!! Недостаточно данных (N < 5) в одной из групп для надежного теста. !!!")
+        print("!!! Nedostatek dat (N < 5) v jedné ze skupin pro spolehlivý test !!!")
         print(f"Nedostatek Dvouvýběrový Wilcoxon test (Děti: {n_children}, Dospělí: {n_adults}).")
         return None
 

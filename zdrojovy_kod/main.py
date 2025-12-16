@@ -35,7 +35,7 @@ def main() -> None:
     print(model.data.head())
 
     # Ulohy 2 .a 2b.: graficka analiza 
-    #graphic_analysis(model)
+    graphic_analysis(model)
 
     # Uloha 4.: Odhady parametrů normálního rozdělení + intervaly spolehlivosti
     compute_normal_parameter_estimates(model)
@@ -44,10 +44,10 @@ def main() -> None:
     ks_median_test_children_vs_adults(model, column="poměr")
 
     # Uloha 5: Asymptotické rozdělení mediánu poměru X/Y
-    #asymptotic_median_ratio(model, column_x="A", column_y="B")
+    asymptotic_median_ratio(model, column_x="A", column_y="B")
 
     # Uloha 6: test shodnosti medianu X/Y pro deti a dospele 
-    # Wilcoxon(model, column="poměr", alpha=0.05)
+    Wilcoxon(model, column="poměr", alpha=0.05)
 
     # Uloha 10: kvantilova regrese
     quantile_analysis(model, dependent="poměr", covariates=["pohlaví", "věk"])
